@@ -1,2 +1,3 @@
-# dragRacer
-A site dedicated to the design and build of an Arduino Drag Racer
+# Arduino Drag Racer by Rob Garcia
+This site provides a detailed outline of the design process used for this Project.
+
