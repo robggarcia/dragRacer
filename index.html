@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>dragRacer by Garcia</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Rob Garcia: Drag Racer</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#goal">Goal</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#planning">Planning</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#materials">Materials</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#cad">CAD</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#wiring">Wiring</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#code">Code</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#reflection">Reflection</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64" id="goal">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" >Goal</h1>
+      <p>The goal of this project was to design, program, and build a drag racing vehicle.  
+          The vehicle was designed according to design specifications outlined in the 
+          Project Assignment page found on our classroom Canvas page.  
+          The goal of the vehicle was to race from a standstill across a 10 foot track and 
+          cross the finish line in the fastest time.  
+          Gears are necessary for a competitive design in order to increase the speed of 
+          the provided TT motors.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="./racer1.jpg" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row" id="planning">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" >Planning</h1>
+      <p>I considered several different designs during the planning phase of my project.  
+          This included different gear ratios, orientations, and layouts.  Although I had the 
+          option to use two TT motors, I wanted to constrain my design to just using one in 
+          order to minimize potential issues.  I initially wanted to use helical gears in 
+          order to have my motor and rear axle spinning 90 degrees relative to each other.</p>
+        <p>As I began creating my CAD model, I soon realized that this would be a very 
+            difficult task.  As an alternative, I decided to design spur gears with teeth 
+            at 45 degrees.  This would allow me to achieve a very similar effect to my 
+            original idea, while still being able to take advantage of available feature 
+            scripts in Onshape.</p>
+        
+        <p>Another design change that occurred during the planning phase involved what 
+            gear ratio would be used.  I initially believed that I could achieve a 10:1
+             gear ratio, however as I investigated this further I discovered the TT motor 
+             would not have enough torque to spin the axle.  Therefore, in order to ensure 
+             the successful completion of my drag racer, I chose a more conservative gear 
+             ratio of 4:1.</p>
+        <p>
+        Here are some additional highlights from the planning phase of the design process.
+        </p>
+        <ul>
+            <li>Drive Style: Two wheel rear drive.  Adjustable interface between Rear Axle and Drive Gear.</li>
+            <li>Wheelbase: Four wheel design, including a free spinning front axle with two laser cut acrylic wheels.</li>
+            <li>Gear Train: A single gear train made up of two gears spinning 90 degrees from each other.</li>
+            <li>Gear Ratio: Final design includes a 4:1 ratio.</li>
+            <li>Race Date: 5/27/2022. This date was firm. If I missed it, I would not be able to compete.</li>
+        </ul>
+    </div>
+    <div class="w3-third w3-container">
+        <img src="./racerCad1.png" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="materials">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" >Materials</h1>
+      <p>Below is a Bill of Materials required to recreate this project.</p>
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>Microcontroller</td>
+          <td>Arduino Uno</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Prototyping Shield</td>
+          <td>Arduino shield including breadboard</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Motor</td>
+          <td>6V TT gearmotors</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Wheel</td>
+          <td>60mm dia TT wheels</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Wheel Mounting Screws</td>
+          <td>Self tapping. Exact size unknown</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Photointerrupter</td>
+          <td>T slot photointerrupter</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Battery Pack</td>
+          <td>9V AA battery pack modified to use 6V</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Standoffs</td>
+          <td>1/2" long, #4-40 standoff</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Switch</td>
+          <td>Panel mount SPDT switch</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>LED</td>
+          <td>Panel mount LED</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Button</td>
+          <td>Breadboard temporary pushbutton</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Potentiometer</td>
+          <td>10 k0hm Breadboard Potentiometer</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Resistor</td>
+          <td>10 kohm</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Resistor</td>
+          <td>220 ohm</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Wires</td>
+          <td>22 gauge, solid core</td>
+          <td>n/a</td>
+        </tr>
+        <tr>
+          <td>Rear Spoiler / Bearings</td>
+          <td>3D printed ABS</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Chassis</td>
+          <td>Custom. Laser cut acrylic.</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Front sensor Mount</td>
+          <td>3D printed ABS</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Spur Gear</td>
+          <td>Custom. 3D printed ABS. 40 teeth, 1.5 mod.</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Axle</td>
+          <td>Custom. 3D printed ABS. Gears with 10 teeth, 1.5 mod.</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Motor Bracket</td>
+          <td>Custom. 3D printed ABS.</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Front Wheel</td>
+          <td>Custom. Laser cut acrylic.</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Machine screw</td>
+          <td>#4-40 Various length</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Nut</td>
+          <td>#4-40</td>
+          <td>7</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="cad">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">CAD</h1>
+      <p><a href="https://cvilleschools.onshape.com/documents/2b7cd55d77247eaa103793f3/w/d0a5d0b45071809964f72304/e/f29b8e3933dd75959f6d9290?renderMode=0&uiState=627c45fd980cca5dd2041d4d">
+          Click Here for a link to my Onshape Model</a></p>
+    </div>
+    <div class="w3-third w3-container">
+        <img src="./racerCad2.png" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="wiring">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="materials">Wiring</h1>
+      <div class="w3-third w3-container">
+        <img src="./boxWiring.png" class="w3-width">
+    </div>
+    </div>
+    <div class="w3-third w3-container">
+        <img src="./racerCad3.png" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="code">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="materials">Code</h1>
+      <p>This program was written on the Arduino IDE.  There were several sequences 
+          that were required to occur before the race car would be allowed to start. 
+           At the starting gate, the car would be placed on the ground and the photointerrupter
+            would be blocked.  With the photointerrupter blocked, I would then be able to press
+             a button to arm the car.  This button would not work unless the photointerrupter 
+             was blocked.  Then, once the photointerrupter was opened up, the Arduino would 
+             send a signal to the H-Bridge module to run both motors.  The time that the motors 
+             run is adjustable from a trim-pot that I installed in the prototyping shield.</p>
+             <iframe src=https://create.arduino.cc/editor/garciar1/70267fc5-f8a0-4f3e-8042-855c57c728ac/preview?embed 
+             style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+    </div>
+    <div class="w3-third w3-container">
+        <img src="./racer4.jpg" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64" id="reflection">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal" id="materials">Reflection</h1>
+      <p>This vehicle was created to be used as an example for students and fulfilled all 
+          of the project requirements. It successfully raced down the track, with a fastest 
+          recorded time of 4.32 seconds. The code allowed the racer to progress through each 
+          step of the race, including turning on the vehicle, placing it in the starting gate,
+           arming the vehicle, and racing. I encountered several problems along the way that 
+           required additional thought or design changes.</p>
+           <p>I initially designed my gear ratio to be 10:1. This would result in a top speed of 
+        just over 6 meters/second. When I tested this design, I learned that the TT motors 
+        do not have enough torque to start the vehicle moving at a 10:1 ratio. This required 
+        a redesign down to a more conservative value of a 4:1 gear ratio. This updated design 
+        worked well, but required significant updates to the CAD model. With the design changes 
+        in place, the top speed of the vehicle dropped from 5 meters/second to just over 3 
+        meters/second. Friction played a major role as well. Sanding the surfaces where the
+         3D printed components meet such as between the axle and bearing blocks improved 
+         performance.</p>
+         <p>Overall I was very satisfied with my drag racer.  
+        Although it does not go as fast as I initially hoped for, my design serves as a 
+        good starting reference for students. If I were to do the project over again, 
+        I would focus on designing a gearbox assembly that uses additional gears and 
+        using simple laser cut acrylic spur gears that all rotate in the same plane.  
+        These changes would result in a much faster racer that would be quicker to design and build.  
+        </p>
+    </div>
+    <div class="w3-third w3-container">
+        <img src="./racer2.jpg" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+        <img src="./racer3.jpg" class="w3-border w3-padding-large w3-padding-32 w3-center" style="width:100%">
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-12">
+      <h4>Created by Rob Garcia at Charlottesville High School, 2022</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
